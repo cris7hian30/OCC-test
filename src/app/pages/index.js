@@ -4,6 +4,7 @@ import FilterByHouse from "../components/FilterbyHouse";
 import StudentTable from "../components/StudentTable";
 import { Button } from "../components/Button";
 import { fetchStudents } from "../utils/api";
+import StudentsGrid from "../components/gridLayout/StudentsGrid";
 
 /**
  * Homepage de la aplicación
@@ -120,10 +121,9 @@ const HomePage = () => {
       ) : dataLoaded && filteredStudents.length === 0 ? (
         <p className="text-center mt-8">No hay información por mostrar...</p>
       ) : (
-        <StudentTable
-          students={filteredStudents}
-          handleHideStudent={handleHideStudent}
-        />
+        <div>
+          <StudentsGrid students={filteredStudents} />
+        </div>
       )}
     </div>
   );
